@@ -2,7 +2,8 @@
 #'
 #' @description
 #' `dm_add_tbl()` adds one or more tables to a [`dm`].
-#' It uses [mutate()] semantics.
+#' This function uses [mutate()] semantics.
+#' gwynn: As a reader and user of R I don't understand what it means when it says it uses mutate semantics. I think we should add some examples that explain this b/c I don't see any.
 #'
 #' @return The initial `dm` with the additional table(s).
 #'
@@ -12,6 +13,8 @@
 #' @param ... One or more tables to add to the `dm`.
 #'   If no explicit name is given, the name of the expression is used.
 #' @inheritParams vctrs::vec_as_names
+#' gwynn: It is not completely clear to me what the repair argument does. I see the example below, but I don't understand the differences between the different possible imputs: "unique", "universal",... I'd recommend a few more examples here.
+#'
 #'
 #' @examples
 #' dm() %>%
@@ -79,7 +82,7 @@ dm_add_tbl_impl <- function(dm, tbls, table_name, filters = vctrs::list_of(new_f
 #'
 #' @param dm A [`dm`] object.
 #' @param ... One or more unquoted table names to remove from the `dm`.
-#' `tidyselect` is supported, see [`dplyr::select()`] for details on the semantics.
+#' `tidyselect` is supported, see [`dplyr::select()`] for details on the semantics. gwynn: I'd add examples showing how to use tidyselect below.
 #'
 #' @export
 #' @examples
